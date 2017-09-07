@@ -1,0 +1,22 @@
+<div>
+    {{twitterHashTagSearch.stuff}}
+</div>
+<div ng-show="twitterHashTagSearch.configuration.waiting">
+    IM WAITING
+</div>
+<input ng-model="twitterHashTagSearch.configuration.keyword">
+<button ng-click="twitterHashTagSearch.functionFromLayout()">
+    FIND ME
+</button>
+<div ng-repeat="result in twitterHashTagSearch.configuration.results track by $index">
+    <div>
+        {{result.text}}
+    </div>
+    <div>
+        {{result.retweet_count}}
+    </div>
+    <div>
+        {{result.user.name}}
+        <img ng-src="{{result.user.profile_image_url}}">
+    </div>
+</div>
